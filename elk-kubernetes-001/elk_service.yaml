@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: elasticsearch
+  namespace: elk
+  labels:
+    app: elasticsearch
+spec:
+  selector:
+    app: elasticsearch-node
+  clusterIP: None
+  ports:
+    - port: 9200
+      name: client-node
+    - port: 9300
+      name: inter-node
